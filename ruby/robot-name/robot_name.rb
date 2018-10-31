@@ -1,16 +1,19 @@
 class Robot
-    NAME_REGEXP = /^[A-Z]{2}\d{3}$/
-    attr_reader :name, :forget
-        def self.forget()
-        
+    require 'securerandom'
+    attr_reader :name, :reset
+        def initalize
+            @name = Robot.generator
         end
-        def self.name(original_name)
-            letters = ('A'..'Z').to_a.sample(2).join
-            numbers = rand(1..999)
-            original_name = "#{letters}#{numbers}"
+        def reset()
+            @name = Robot.new.generator
+        end
+        def name()
+            @name = Robot.new.generator.uniq
         end
 
-        def self.reset
-            
+        def generator
+            letters = ('A'..'Z').to_a.sample(2).join
+            numbers = rand(100..999)
+            name = "#{letters}#{numbers}"
         end
 end
