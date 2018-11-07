@@ -2,8 +2,8 @@ class Luhn
     def initialize (number)
         @number = number
     end
-    def self.valid?
-        @number.math
+    def self.valid?(number)
+        sum_it % 10 == 0 
     end
 
     def math
@@ -22,7 +22,7 @@ class Luhn
     def sum_it
         math.sum 
     end
-    
+
     private
 
     def digits
