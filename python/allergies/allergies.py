@@ -11,11 +11,17 @@ class Allergies(object):
         "cats" : 128
     }
 
-    def __init__(self, score):
+    def __init__(self, score, item_dictionary):
+        self.item_dictionary = item_dictionary
         self._lst = score
+        for values in item_dictionary.values():
+          if score >= values:
+            return item_dictionary.value
+
         
 
     def is_allergic_to(self, item):
+        item = item_dictionary.key
         pass
 
     @property
